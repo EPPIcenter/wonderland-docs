@@ -200,3 +200,4 @@ If you see an error like "The following pools were not found in configuration":
 - **File format questions**: See example files in the repository's `panel_information/` directory
 - **Issues or questions**: Report issues on [GitHub](https://github.com/EPPIcenter/mad4hatter/issues)
 
+
