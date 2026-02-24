@@ -278,3 +278,4 @@ This displays the complete help message with all pipeline parameters.
 - **Use custom pools**: See [Custom Pools](custom-pools.md) for setting up bespoke amplicon panels
 - **Understand modules**: See [Core Pipeline Modules](modules/core-pipeline/index.md) for details on each processing step
 
+

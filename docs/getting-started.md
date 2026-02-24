@@ -158,3 +158,4 @@ nextflow run main.nf \
 - **Documentation**: Browse the other pages in this documentation
 - **Getting in touch**: Report bugs, feature requests, and questions as an issue on the [GitHub repository](https://github.com/EPPIcenter/mad4hatter/issues). Alternatively, reach out to the EPPIcenter team (kathryn.murie@ucsf.edu).
 
+

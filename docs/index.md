@@ -23,7 +23,7 @@ The pipeline can be run using **Nextflow** (command-line interface) or **Terra**
     <span class="platform-description">Command-line interface for local computers and HPC clusters</span>
   </a>
   
-  <a href="https://app.terra.bio/#workspaces/gates-malaria/Mad4Hatter" target="_blank" rel="noopener" class="platform-button">
+  <a href="https://app.terra.bio/#workspaces/gates-malaria/Malaria_Plasmodium_Illumina_Amplicon_Mad4Hatter" target="_blank" rel="noopener" class="platform-button">
     <img src="assets/images/terra-logo.png" alt="Terra Logo" class="platform-logo">
     <span class="platform-text">Run on Terra</span>
     <span class="platform-description">Cloud-based platform with graphical interface - no installation required</span>
@@ -59,4 +59,5 @@ fetch('https://api.github.com/repos/eppicenter/mad4hatter/contributors')
     document.getElementById('contributors-list').innerHTML = '<li>Unable to load contributors.</li>';
   });
 </script>
+
 

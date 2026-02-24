@@ -84,3 +84,4 @@ Quality control and drug resistance modules are also run to provide further inte
 
 **Output:** folder `resistance_marker_module/`. For full info on the outputs see [Resistance Marker Module Outputs](pipeline-outputs.md#resistance-marker-module-outputs).
 
+

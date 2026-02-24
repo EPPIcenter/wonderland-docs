@@ -278,29 +278,29 @@ These files are generated when resistance marker analysis is enabled. They provi
 | Column | Description |
 |:------:|:------------|
 | `sample_name` | Sample identifier |
-| `GeneID` | Gene identifier (e.g., `0417200`) |
-| `Gene` | Gene name (e.g., `dhfr`, `mdr1`, `crt`) |
-| `CodonID` | Codon position in the gene |
-| `RefCodon` | Reference codon sequence (3 bases) |
-| `Codon` | Observed codon sequence in the sample |
-| `CodonRefAlt` | Whether codon is reference (`REF`) or alternative (`ALT`) |
-| `RefAA` | Reference amino acid |
-| `AA` | Observed amino acid |
-| `AARefAlt` | Whether amino acid is reference (`REF`) or alternative (`ALT`) |
-| `FollowsIndel` | Boolean indicating if this codon follows an insertion/deletion |
-| `CodonMasked` | Boolean indicating if this codon is in a masked region |
-| `MultipleLoci` | Boolean indicating if this codon maps to multiple targets |
+| `gene_id` | Gene identifier (e.g., `0417200`) |
+| `gene` | Gene name (e.g., `dhfr`, `mdr1`, `crt`) |
+| `aa_position` | Codon/amino acid position in the gene |
+| `ref_codon` | Reference codon sequence (3 bases) |
+| `codon` | Observed codon sequence in the sample |
+| `codon_ref_alt` | Whether codon is reference (`REF`) or alternative (`ALT`) |
+| `ref_aa` | Reference amino acid |
+| `aa` | Observed amino acid |
+| `aa_ref_alt` | Whether amino acid is reference (`REF`) or alternative (`ALT`) |
+| `follows_indel` | Boolean indicating if this codon follows an insertion/deletion |
+| `codon_masked` | Boolean indicating if this codon is in a masked region |
+| `multiple_loci` | Boolean indicating if this codon maps to multiple targets |
 | `reads` | Number of reads supporting this codon call |
 
 **Example:**
 ```
-sample_name          GeneID   Gene  CodonID  RefCodon  Codon  CodonRefAlt  RefAA  AA  AARefAlt  FollowsIndel  CodonMasked  MultipleLoci  reads
-SRR26819135_S1_L001  0417200  dhfr  16       GCA       GCA    REF          A      A   REF       False          False        False         127
-SRR26819135_S1_L001  0417200  dhfr  51       AAT       ATT    ALT          N      I   ALT       False          False        False         127
+sample_name          gene_id  gene  aa_position  ref_codon  codon  codon_ref_alt  ref_aa  aa  aa_ref_alt  follows_indel  codon_masked  multiple_loci  reads
+SRR26819135_S1_L001  0417200  dhfr  16           GCA        GCA   REF            A       A   REF         False           False         False         127
+SRR26819135_S1_L001  0417200  dhfr  51           AAT        ATT   ALT            N       I   ALT         False           False         False         127
 ```
 
 !!! tip "Interpreting Resmarker Table"
-    This file is a collapsed version of `resmarker_table_by_locus.txt`. If a codon is found in multiple targets for a specific marker, then the reads are summed together and the rows are collapsed into one. If this has happened then `MultipleLoci` will be `True`. If you need to analyse the data per target, for example if you have a poorly performing target you want to filter out or you want to collapse reads in a different way (e.g., mean), then use `resmarker_table_by_locus.txt`.
+    This file is a collapsed version of `resmarker_table_by_locus.txt`. If a codon is found in multiple targets for a specific marker, then the reads are summed together and the rows are collapsed into one. If this has happened then `multiple_loci` will be `True`. If you need to analyse the data per target, for example if you have a poorly performing target you want to filter out or you want to collapse reads in a different way (e.g., mean), then use `resmarker_table_by_locus.txt`.
 
 ---
 
@@ -313,21 +313,21 @@ SRR26819135_S1_L001  0417200  dhfr  51       AAT       ATT    ALT          N    
 | Column | Description |
 |:------:|:------------|
 | `sample_name` | Sample identifier |
-| `GeneID` | Gene identifier |
-| `Gene` | Gene name |
+| `gene_id` | Gene identifier |
+| `gene` | Gene name |
 | `target_name` | Target identifier where this codon was observed |
-| `CodonID` | Codon position in the gene |
-| `RefCodon` | Reference codon sequence |
-| `Codon` | Observed codon sequence |
-| `CodonRefAlt` | Whether codon is `REF` or `ALT` |
-| `RefAA` | Reference amino acid |
-| `AA` | Observed amino acid |
-| `AARefAlt` | Whether amino acid is `REF` or `ALT` |
-| `FollowsIndel` | Boolean indicating if codon follows an indel |
-| `CodonMasked` | Boolean indicating if codon is in a masked region |
+| `aa_position` | Codon/amino acid position in the gene |
+| `ref_codon` | Reference codon sequence |
+| `codon` | Observed codon sequence |
+| `codon_ref_alt` | Whether codon is `REF` or `ALT` |
+| `ref_aa` | Reference amino acid |
+| `aa` | Observed amino acid |
+| `aa_ref_alt` | Whether amino acid is `REF` or `ALT` |
+| `follows_indel` | Boolean indicating if codon follows an indel |
+| `codon_masked` | Boolean indicating if codon is in a masked region |
 | `reads` | Number of reads supporting this codon call |
 
-**Difference from `resmarker_table.txt`:** This file includes `target_name` to show which target each codon call came from. This may be useful if you want to filter targets or collapse codons covered by multuple targets in a different way then the pipeline does (e.g., max or mean). 
+**Difference from `resmarker_table.txt`:** This file includes `target_name` to show which target each codon call came from. This may be useful if you want to filter targets or collapse codons covered by multiple targets in a different way than the pipeline does (e.g., max or mean). 
 
 ---
 
@@ -340,19 +340,19 @@ SRR26819135_S1_L001  0417200  dhfr  51       AAT       ATT    ALT          N    
 | Column | Description |
 |:------:|:------------|
 | `sample_name` | Sample identifier |
-| `GeneID` | Gene identifier |
-| `Gene` | Gene name |
+| `gene_id` | Gene identifier |
+| `gene` | Gene name |
 | `target_name` | Target identifier |
-| `MicrohaplotypeCodonIDs` | List of codon positions in this microhaplotype (e.g., `16/51/59`) |
-| `RefMicrohap` | Reference microhaplotype (amino acids separated by `/`, e.g., `A/N/C`) |
-| `Microhaplotype` | Observed microhaplotype (amino acids separated by `/`, e.g., `A/I/R`) |
-| `MicrohapRefAlt` | Whether microhaplotype is `REF` or `ALT` |
+| `mhap_aa_positions` | List of codon/amino acid positions in this microhaplotype (e.g., `16/51/59`) |
+| `ref_mhap` | Reference microhaplotype (amino acids separated by `/`, e.g., `A/N/C`) |
+| `mhap` | Observed microhaplotype (amino acids separated by `/`, e.g., `A/I/R`) |
+| `mhap_ref_alt` | Whether microhaplotype is `REF` or `ALT` |
 | `reads` | Number of reads supporting this microhaplotype |
 
 **Example:**
 ```
-sample_name          GeneID   Gene  target_name                    MicrohaplotypeCodonIDs  RefMicrohap  Microhaplotype  MicrohapRefAlt  reads
-SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    16/51/59                A/N/C        A/I/R           ALT             381
+sample_name          gene_id  gene  target_name                    mhap_aa_positions  ref_mhap  mhap    mhap_ref_alt  reads
+SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    16/51/59           A/N/C     A/I/R   ALT            381
 ```
 
 !!! note "Microhaplotypes"
@@ -369,21 +369,21 @@ SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    16/51/59     
 | Column | Description |
 |:------:|:------------|
 | `sample_name` | Sample identifier |
-| `GeneID` | Gene identifier |
-| `Gene` | Gene name |
+| `gene_id` | Gene identifier |
+| `gene` | Gene name |
 | `target_name` | Target identifier |
-| `LocusPosition` | Position in the target (not gene position) |
-| `Alt` | Alternative (mutant) base |
-| `Ref` | Reference base |
+| `target_position` | Position in the target (not gene position) |
+| `alt` | Alternative (mutant) base |
+| `ref` | Reference base |
 | `reads` | Number of reads supporting this mutation |
 
 **When to use:** This file provides a simple view of all mutations without codon/amino acid interpretation. Useful for looking for novel mutations, outside of markers of interest.
 
 **Example:**
 ```
-sample_name          GeneID   Gene  target_name                    LocusPosition  Alt  Ref  reads
-SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    110            T    A    127
-SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    133            C    T    127
+sample_name          gene_id  gene  target_name                    target_position  alt  ref  reads
+SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    110              T    A    127
+SRR26819135_S1_L001  0417200  dhfr  Pf3D7_04_v3-0748128-0748326    133              C    T    127
 ```
 
 ---
@@ -476,4 +476,5 @@ resistance_marker_module/ (if enabled)
 - **Check quality**: Review coverage files to ensure sufficient read depth
 - **Resistance analysis**: If enabled, review resistance marker tables for drug resistance mutations
 - **Reproducibility**: Use `run/parameters.tsv` to reproduce your analysis
+
 
