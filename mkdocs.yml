@@ -50,6 +50,7 @@ nav:
   - Pipeline Resources: resources.md
   - Bespoke Pools/Panels: custom-pools.md
   - Pipeline Steps: pipeline-steps.md
+  - QC: qc.md
   - Blog:
     - blog/index.md
     - blog/v1.0.0-release.md 
