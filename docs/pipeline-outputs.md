@@ -289,7 +289,7 @@ These files are generated when resistance marker analysis is enabled. They provi
 | `aa_ref_alt` | Whether amino acid is reference (`REF`) or alternative (`ALT`) |
 | `follows_indel` | Boolean indicating if this codon follows an insertion/deletion |
 | `codon_masked` | Boolean indicating if this codon is in a masked region |
-| `multiple_loci` | Boolean indicating if this codon maps to multiple targets |
+| `multiple_loci` | Boolean indicating if this codon was observed in multiple targets for this sample (see below) |
 | `reads` | Number of reads supporting this codon call |
 
 **Example:**
@@ -300,7 +300,9 @@ SRR26819135_S1_L001  0417200  dhfr  51           AAT        ATT   ALT           
 ```
 
 !!! tip "Interpreting Resmarker Table"
-    This file is a collapsed version of `resmarker_table_by_locus.txt`. If a codon is found in multiple targets for a specific marker, then the reads are summed together and the rows are collapsed into one. If this has happened then `multiple_loci` will be `True`. If you need to analyse the data per target, for example if you have a poorly performing target you want to filter out or you want to collapse reads in a different way (e.g., mean), then use `resmarker_table_by_locus.txt`.
+    This file is a collapsed version of `resmarker_table_by_locus.txt`. If a codon is found in multiple targets for a specific marker, then the reads are summed together and the rows are collapsed into one. If this has happened then `multiple_loci` will be `True`. If you need to analyse the data per target, for example if you have a poorly performing target you want to filter out or you want to collapse reads in a different way (e.g., mean), then use `resmarker_table_by_locus.txt`. 
+    
+    **`multiple_loci` column:** This column is `True` when this specific codon (at this amino acid position, with this observed sequence) was found in more than one target for this sample. Some resistance markers may fall within regions covered by multiple amplicon targets. The same codon may be called from each target for that resistance marker. In those cases, when the pipeline collapses those per-target calls, it sets `multiple_loci` to `True`. The column is `False` when the specific codon was only seen in a single target, even if the marker is covered by multiple targets in the panel, so long as this particular codon call was not observed in more than one of them.
 
 ---
 
