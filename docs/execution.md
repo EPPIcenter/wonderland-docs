@@ -2,6 +2,8 @@
 
 This page explains how to run the MAD4HATTER pipeline, including which parameters are required, what workflows are available, and how to customize your run.
 
+If you do not have the workflow on your machine yet, clone the [mad4hatter repository](https://github.com/EPPIcenter/mad4hatter) first (`git clone https://github.com/EPPIcenter/mad4hatter.git`); see [Getting Started — Clone the repository](getting-started.md#clone-the-repository) for context.
+
 ## Understanding Parameters
 
 Parameters with **two hyphens** (`--`) are pipeline-specific parameters defined by MAD4HATTER. Parameters with **one hyphen** (`-`) are Nextflow-defined parameters. For example, `--readDIR` is a pipeline parameter (two hyphens) and `-profile` is a Nextflow parameter (one hyphen).
@@ -60,7 +62,7 @@ You must specify a runtime profile using `-profile`:
 
 - `docker` - For local computers
 - `apptainer` or `conda` - For HPC clusters
-- See [Quick Start](quick-start.md) for details on choosing a profile
+- See [Getting Started](getting-started.md) for details on choosing a profile
 
 ---
 
