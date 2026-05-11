@@ -20,9 +20,14 @@ The QC report is available as a **Quarto Markdown** (`.qmd`) document (or Jupyte
 
 ## How to Use
 
-1. Clone the [ampseq-qc repository](https://github.com/EPPIcenter/ampseq-qc)
-2. Set paths to your MAD4HATTER results directory and sample manifest in the Quarto document
-3. Change any filters you would like to set 
+You need to clone the [ampseq-qc](https://github.com/EPPIcenter/ampseq-qc) repository to your computer before you can edit paths and render the report:
+
+```bash
+git clone https://github.com/EPPIcenter/ampseq-qc.git
+```
+
+1. Set paths to your MAD4HATTER results directory and sample manifest in the Quarto document
+2. Change any filters you would like to set
 3. Render the document (e.g., in RStudio or via the Quarto extension) to generate the HTML report
 
 For installation, required inputs, and detailed usage, see the [ampseq-qc README](https://github.com/EPPIcenter/ampseq-qc).

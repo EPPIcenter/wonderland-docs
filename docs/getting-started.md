@@ -19,6 +19,15 @@ Before you begin, you'll need:
     - **Apptainer/Singularity** - For HPC clusters
     - **Conda** - Alternative dependency management
 
+## Clone the repository
+
+You need a local copy of the pipeline before you run it. Clone the [mad4hatter](https://github.com/EPPIcenter/mad4hatter) repository and move into that directory (the examples below assume you run Nextflow from there):
+
+```bash
+git clone https://github.com/EPPIcenter/mad4hatter.git
+cd mad4hatter
+```
+
 ## Quick Start Guide
 
 ### Step 1: Choose Your Environment
