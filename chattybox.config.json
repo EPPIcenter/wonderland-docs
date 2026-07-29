@@ -4,7 +4,7 @@
     "description": "MAD4HATTER docs assistant (funder PoC). Free tier: 10 pages including blog index."
   },
   "assistant": {
-    "name": "MAD4HATTER Docs",
+    "name": "Ask Docs",
     "promptProfile": "support",
     "fallbackResponse": "I could not find that in the MAD4HATTER documentation. Try Getting Started, Running the Pipeline, or Parameters, or rephrase your question."
   },
@@ -35,7 +35,7 @@
   "widget": {
     "enabled": true,
     "position": "bottom-right",
-    "title": "Ask MAD4HATTER Docs",
+    "title": "Ask Docs",
     "welcomeMessage": "Ask a question about installing, running, or interpreting MAD4HATTER. Answers cite the documentation pages they came from."
   }
 }
