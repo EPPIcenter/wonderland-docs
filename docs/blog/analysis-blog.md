@@ -8,7 +8,7 @@ This guide provides a brief overview of the key steps to help you move from raw 
 
 ## Make sure the pipeline version is up to date 
 
-At the time of writing, the most recently released version of the pipeline is **v1.0.0**. This version introduces updates to the column names and output formats, along with other changes. Changes are documented [here](v1.0.0-release.md) and information about the outputs can be found [here](https://eppicenter.github.io/wonderland-docs/pipeline-outputs/). If you’re starting fresh, this is the version you should use, as it’s the one maintained for compatibility with downstream tools. 
+At the time of writing, the most recently released version of the pipeline is **v1.0.0**. This version introduces updates to the column names and output formats, along with other changes. Changes are documented [here](v100-release.md) and information about the outputs can be found [here](https://eppicenter.github.io/wonderland-docs/pipeline-outputs/). If you’re starting fresh, this is the version you should use, as it’s the one maintained for compatibility with downstream tools. 
 
 If you’re working with outputs from older versions (v0.1.8 or later), differences in parameters are unlikely to dramatically change results, but some processing steps have been refined. Keep in mind that all processing is performed on a **per-run basis**, so consistency across runs matters later.
 
@@ -82,6 +82,7 @@ Further classification (e.g., distinguishing *P. ovale curtisi* vs *wallikeri*) 
 ## Final thoughts
 
 Working with mad4hatter outputs involves a series of structured steps:
+
 1. Use standardized, up-to-date outputs
 2. Perform rigorous QC and filtering
 3. Merge datasets thoughtfully

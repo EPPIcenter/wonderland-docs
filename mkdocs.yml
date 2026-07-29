@@ -55,7 +55,7 @@ nav:
   - Blog:
     - blog/index.md
     - blog/analysis-blog.md
-    - blog/v1.0.0-release.md
+    - blog/v100-release.md
 
 plugins:
   - search
