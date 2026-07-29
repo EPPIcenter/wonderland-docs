@@ -13,6 +13,7 @@ use_directory_urls: true
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     - scheme: default
       primary: indigo
@@ -81,8 +82,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -95,6 +96,9 @@ markdown_extensions:
 extra:
   version:
     provider: mike
+  # Public ChattyBox widget credentials (safe in browser). See CHATBOT_SETUP.md.
+  chattybox_api_key: "cb_4slkmTmWFOQ846u2QgahwijFFHVVzdP3"
+  chattybox_api_url: "https://adorable-woodpecker-629.convex.site/chat"
 
 extra_css:
   - assets/css/custom.css

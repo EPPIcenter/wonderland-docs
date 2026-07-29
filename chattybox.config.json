@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1",
+  "project": {
+    "description": "MAD4HATTER docs assistant (funder PoC). Free tier: 10 pages including blog index."
+  },
+  "assistant": {
+    "name": "MAD4HATTER Docs",
+    "promptProfile": "support",
+    "fallbackResponse": "I could not find that in the MAD4HATTER documentation. Try Getting Started, Running the Pipeline, or Parameters, or rephrase your question."
+  },
+  "knowledge": {
+    "sources": [
+      {
+        "type": "website",
+        "url": "https://eppicenter.github.io/wonderland-docs/",
+        "mode": "manual",
+        "manualUrls": [
+          "https://eppicenter.github.io/wonderland-docs/",
+          "https://eppicenter.github.io/wonderland-docs/getting-started/",
+          "https://eppicenter.github.io/wonderland-docs/execution/",
+          "https://eppicenter.github.io/wonderland-docs/parameters/",
+          "https://eppicenter.github.io/wonderland-docs/pipeline-outputs/",
+          "https://eppicenter.github.io/wonderland-docs/resources/",
+          "https://eppicenter.github.io/wonderland-docs/custom-pools/",
+          "https://eppicenter.github.io/wonderland-docs/pipeline-steps/",
+          "https://eppicenter.github.io/wonderland-docs/qc/",
+          "https://eppicenter.github.io/wonderland-docs/blog/"
+        ],
+        "maxPages": 10,
+        "autoRescrape": true,
+        "rescrapeInterval": "weekly"
+      }
+    ]
+  },
+  "widget": {
+    "enabled": true,
+    "position": "bottom-right",
+    "title": "Ask MAD4HATTER Docs",
+    "welcomeMessage": "Ask a question about installing, running, or interpreting MAD4HATTER. Answers cite the documentation pages they came from."
+  }
+}

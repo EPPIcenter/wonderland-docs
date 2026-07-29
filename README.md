@@ -34,6 +34,14 @@ This documentation site is built with [MkDocs](https://www.mkdocs.org/) and the 
    ```
    The built site will be in the `site/` directory (which is gitignored).
 
+### AI docs chatbot (PoC)
+
+A ChattyBox widget is embedded via `overrides/main.html` so visitors can ask questions and get answers with citations into these docs.
+
+1. Follow [CHATBOT_SETUP.md](CHATBOT_SETUP.md) to create the free ChattyBox project and paste the public key / API URL into `mkdocs.yml`.
+2. Use [CHATBOT_DEMO.md](CHATBOT_DEMO.md) for a short funder demo script.
+3. Corpus rules for the free tier (core pages only) are in `chattybox.config.json`.
+
 ### Documentation Structure
 
 - **Documentation source files**: Located in the `docs/` directory

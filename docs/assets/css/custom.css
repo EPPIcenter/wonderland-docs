@@ -297,4 +297,9 @@
   }
 }
 
+/* Keep ChattyBox launcher clear of Material back-to-top control */
+.md-top {
+  margin-right: 4.5rem;
+}
+
 

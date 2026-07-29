@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+  {{ super() }}
+  {# ChattyBox hosted widget. Public widget API key is safe in browser code.
+     Credentials come from mkdocs.yml extra.chattybox_*. See CHATBOT_SETUP.md. #}
+  <script
+    id="chattybox-widget"
+    src="https://chattybox.ai/widget.js"
+    async
+    data-api-key="{{ config.extra.chattybox_api_key }}"
+    data-api-url="{{ config.extra.chattybox_api_url }}"
+    data-chattybox-widget="true"
+  ></script>
+{% endblock %}
